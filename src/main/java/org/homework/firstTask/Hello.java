@@ -1,5 +1,6 @@
 package org.homework.firstTask;
 
+// Написати програму з класом в якому є символьне поле і метод, який повертає значення  код символу
 public class Hello {
 
     private char word = '$';

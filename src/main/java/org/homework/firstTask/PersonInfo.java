@@ -4,7 +4,7 @@ import org.homework.App;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-
+// Напишіть програму з класом, у якого є два цілочислових поля і метод, який виводить в консоль значення цих полів
 
 public class PersonInfo {
 
