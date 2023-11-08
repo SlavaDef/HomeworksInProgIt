@@ -1,0 +1,7 @@
+
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÿî¿™8Ÿ’Îôº1
+K
+java:S1905")Remove this unnecessary cast to "Logger".(…É‡¯ùÿÿÿÿ8±·’õº1
+G	java:S106*"+Replace this use of System.out by a logger.(£Ô§8­’Îôº1
+O
+java:S1128"-Remove this unused import 'org.homework.App'.(îÏœÈıÿÿÿÿ8¸·’õº1
