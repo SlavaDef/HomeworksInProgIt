@@ -2,10 +2,8 @@ package org.homework;
 
 
 import org.apache.log4j.BasicConfigurator;
-import org.homework.firstTask.PersonInfo;
-import org.homework.firstTask.Hello;
-import org.homework.firstTask.Symbols;
-import org.homework.firstTask.WithConstruct;
+
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -17,7 +15,7 @@ public class App {
     public static void main(String[] args) {
         BasicConfigurator.configure();
 
-        char first = new Hello().print();
+      /*  char first = new Hello().print();
 
         System.out.println(first);
         // with logger
@@ -47,7 +45,37 @@ public class App {
 
         new WithConstruct();
         new WithConstruct(168.22);
-        new WithConstruct(55.6, 12.5);
+        new WithConstruct(55.6, 12.5);   */
+
+      /*  Students students = new Students('A',22);
+        Students students1 = new Students('B', 25);
+
+        //students.setGroup('A');
+       // students.setStudentCount(33);
+
+        System.out.println(students.getGroup());
+        System.out.println(students.getStudentCount());
+
+
+        System.out.println(students1.getGroup());
+        System.out.println(students1.getStudentCount());
+
+        students.show(students,students1);
+
+        System.out.println("--------------------------------------");
+
+        System.out.println(students.getGroup());
+        System.out.println(students.getStudentCount());
+
+        System.out.println(students1.getGroup());
+        System.out.println(students1.getStudentCount());   */
+
+
+
+
+
+
+
 
 
 

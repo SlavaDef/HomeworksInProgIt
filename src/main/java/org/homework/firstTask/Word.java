@@ -1,7 +1,7 @@
 package org.homework.firstTask;
 
 // Написати програму з класом в якому є символьне поле і метод, який повертає значення  код символу
-public class Hello {
+public class Word {
 
     private char word = '$';
 
@@ -13,7 +13,8 @@ public class Hello {
         this.word = word;
     }
 
-    public char print(){
-        return getWord();
+    public int print(){
+        int resalt = word;
+        return resalt;
     }
 }
