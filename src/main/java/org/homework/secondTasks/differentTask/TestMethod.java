@@ -1,6 +1,7 @@
-package org.homework.secondTasks;
+package org.homework.secondTasks.differentTask;
 
 
+import org.homework.secondTasks.differentTask.Students;
 
 public class TestMethod {
 

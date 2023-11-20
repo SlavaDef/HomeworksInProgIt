@@ -1,4 +1,4 @@
-package org.homework.secondTasks;
+package org.homework.secondTasks.differentTask;
 
 
 // ● Напишіть програму з класом, в якому є поле -

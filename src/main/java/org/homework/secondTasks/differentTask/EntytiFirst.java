@@ -1,4 +1,4 @@
-package org.homework.secondTasks;
+package org.homework.secondTasks.differentTask;
 
 // ● Напишіть програму з двома класами. У першого класу є цілочислове поле. У
 //другого класу є символьне поле.

@@ -1,4 +1,4 @@
-package org.homework.secondTasks;
+package org.homework.secondTasks.differentTask;
 
 // Напишіть програму з класом, в якому є два поля (символьне і цілочислове) і метод,
 // аргументом якому передається об'єкт того ж класу. При виклику методу об'єкту, з

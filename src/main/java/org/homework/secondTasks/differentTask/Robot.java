@@ -1,4 +1,4 @@
-package org.homework.secondTasks;
+package org.homework.secondTasks.differentTask;
 
 // 1. Напишіть програму з класом, у якому є два цілочислових поля. У класі має бути
 //дві версії конструктора: з двома аргументами та без аргументу. У класі має бути

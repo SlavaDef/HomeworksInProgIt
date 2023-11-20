@@ -1,4 +1,4 @@
-package org.homework;
+package org.homework.secondTasks.differentTask;
 
 
 import org.apache.log4j.BasicConfigurator;
@@ -69,17 +69,6 @@ public class App {
 
         System.out.println(students1.getGroup());
         System.out.println(students1.getStudentCount());   */
-
-
-
-
-
-
-
-
-
-
-
 
     }
 }
