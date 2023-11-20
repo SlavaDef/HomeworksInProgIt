@@ -1,11 +1,8 @@
 package org.homework.secondTasks.crow;
 
-
-public interface Alfa {
+public interface Bravo {
 
     void show();
 
-    void set(int a);
-
-
+    String get();
 }

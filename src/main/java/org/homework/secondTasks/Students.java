@@ -28,8 +28,6 @@ public class Students {
         students1.group++;
         students1.studentCount++;
         System.out.println("After changes second object = " + students1);
-
-
     }
 
 
@@ -39,5 +37,11 @@ public class Students {
                 "group=" + group +
                 ", studentCount=" + studentCount +
                 '}';
+    }
+
+
+    public static void main(String[] args) {
+        Students students = new Students('D', 21);
+        students.change(students);
     }
 }
