@@ -1,0 +1,8 @@
+
+„
+java:S1488"bImmediately return this expression instead of assigning it to the temporary variable "newNumbers".(µ¢Êïúÿÿÿÿ8êœö¦½1
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(åšõ®ûÿÿÿÿ8ìœö¦½1
+G	java:S106"+Replace this use of System.out by a logger.(‚ìÊ8ƒö¦½1
+L	java:S106"+Replace this use of System.out by a logger.(ŞÒ—üÿÿÿÿ8‰ö¦½1
+G	java:S106,"+Replace this use of System.out by a logger.(³Şêé8Ä™ø¦½1
+G	java:S106-"+Replace this use of System.out by a logger.(ÍÆ»€8£û¦½1

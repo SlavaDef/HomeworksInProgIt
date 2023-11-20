@@ -18,7 +18,7 @@ public class Students {
     int studentCount;
 
 
-    static void change(Students students) {
+    public void change(Students students) {
         Students students1 = new Students('C', 33);
         System.out.println("Before changes first object = " + students);
         System.out.println("Before changes second object = " + students1);
