@@ -18,7 +18,6 @@ public class Node {
 
     Node nextNode;
 
-
     static Node createNodes(int count) {
 
         Node node = new Node();
@@ -43,15 +42,19 @@ public class Node {
         Node not = node;
         do {
             not = not.nextNode;
-            if (not.number!=5){
+            if (not.number != 5) {
                 System.out.print("|" + not.number);
             }
 
-        } while (not.number !=5);
+        } while (not.number != 5);
     }
 
     public static void main(String[] args) {
         Node node1 = createNodes(10);
+        Node node2 = createNodes(15);
         show(node1);
+        System.out.println();
+        show(node2);
+
     }
 }

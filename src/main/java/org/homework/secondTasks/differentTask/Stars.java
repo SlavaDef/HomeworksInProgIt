@@ -11,42 +11,35 @@ public class Stars {
 
     private int distanseInMiles;
 
+    Stars[] stars;
+
     public Stars(int distanseInMiles) {
         this.distanseInMiles = distanseInMiles;
     }
 
-    public int getDistanseInMiles() {
-        return distanseInMiles;
-    }
-
-
-
-    public Stars[] inizialized(Stars[] stars) {
-         stars = new Stars[getDistanseInMiles() * 2];
+    public Stars[] inizialized(int length) {
+        stars = new Stars[length];
         for (int i = 0; i < stars.length; i++) {
-            stars[i] = new Stars( getDistanseInMiles() * 100 * 5);
+            stars[i] = new Stars((distanseInMiles + i) * 100 * 5);
         }
         return stars;
     }
 
-    static void findTheBiggestStar(Stars[] stars){
-
-
-
-
-
-    }
-
- /*   public static void main(String[] args) {
-        Stars stars = new Stars(12);
-
-      stars.inizialized(stars);
-
-        for (int s: stars){
-
+    static void findTheBiggestStar(Stars[] stars) {
+        int temp = 1;
+        int temp2 = 0;
+        for (int i = 0; i < stars.length; i++) {
+            if (stars[i].distanseInMiles > temp) {
+                temp = stars[i].distanseInMiles;
+                temp2 = i;
+            }
         }
-
+        System.out.println("The biggest star hes index " + temp2 + ", with distanse in " + temp + "km");
     }
-*/
 
+    public static void main(String[] args) {
+        Stars stars = new Stars(12);
+        Stars[] stars1 = stars.inizialized(10);
+        findTheBiggestStar(stars1);
+    }
 }
