@@ -1,6 +1,8 @@
 package org.homework.secondTasks.differentTask;
 
 
+import java.util.Random;
+
 // Напишіть програму з класом, в якому є цілочислове
 //поле. Створіть масив таких об'єктів. Поля об'єктів
 //заповніть випадковими числами. Опишіть статичний
@@ -18,9 +20,11 @@ public class Stars {
     }
 
     public Stars[] inizialized(int length) {
+
         stars = new Stars[length];
         for (int i = 0; i < stars.length; i++) {
-            stars[i] = new Stars((distanseInMiles + i) * 100 * 5);
+            int random = (int)(Math.random()*100000);
+            stars[i] = new Stars(distanseInMiles * random );
         }
         return stars;
     }
