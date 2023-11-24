@@ -19,12 +19,19 @@ public class SymbolFindByInt {
 
     public static void main(String[] args) {
 
-        Functional f = (String word, int n) -> {
-            word = "hello";
-            n = 0;
+        Functional f = String::charAt;
 
-            return word.charAt(n);
-        };
+        // Another case
 
+       /* Functional f2 = (word,n) -> {
+          return word.charAt(n);
+        }; */
+
+           // audit
+        String word ="Sehenswürdigkeiten";
+        int wordNumber = 6;
+
+        char res = f.symbolic(word,wordNumber);
+        System.out.println(res);
     }
 }
