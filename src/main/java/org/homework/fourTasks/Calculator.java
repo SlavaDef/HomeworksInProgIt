@@ -36,10 +36,11 @@ public class Calculator {
     public int calculating(String operation, int firs, int second) {
         int result = 0;
 
-        if (second == 0) {
+       /* if (second == 0) {
             throw new ArithmeticException("You can not work with zero");
 
-        }
+        } */
+
         switch (operation) {
             case ("/"):
                 result = firs / second;
@@ -67,20 +68,25 @@ public class Calculator {
                     QUESTION_MESSAGE
             );
 
+            operation = String.valueOf(input);
+            //  System.out.println(operation);
 
+        } catch (IllegalArgumentException e) {
+            showMessageDialog(null,
+
+                    "Try again, please enter / or * or - or + ",
+                    "Error",
+                    WARNING_MESSAGE
+            );
+        }
+        try {
             input1 = showInputDialog(null,
                     "Please enter first number",
                     "Calculator",
                     QUESTION_MESSAGE
             );
 
-            input2 = showInputDialog(null,
-                    "Please enter second number",
-                    "Calculator",
-                    QUESTION_MESSAGE
-            );
-
-
+            firstNumber = parseInt(input1);
         } catch (NumberFormatException e) {
             showMessageDialog(null,
 
@@ -90,12 +96,50 @@ public class Calculator {
                     WARNING_MESSAGE
             );
 
+            input1 = showInputDialog(null,
+                    "Please enter first number",
+                    "Calculator",
+                    QUESTION_MESSAGE
+            );
+            firstNumber = parseInt(input1);
+
         }
 
-        operation = String.valueOf(input);
-        firstNumber = parseInt(input1);
-        secondNumber = parseInt(input2);
+        try {
+            input2 = showInputDialog(null,
+                    "Please enter second number",
+                    "Calculator",
+                    QUESTION_MESSAGE
+            );
 
+            secondNumber = parseInt(input2);
+            while (secondNumber==0){
+                input2 = showInputDialog(null,
+                        "Please enter second number",
+                        "Calculator",
+                        QUESTION_MESSAGE
+                );
+                secondNumber = parseInt(input2);
+            }
+
+        } catch (NumberFormatException | NullPointerException e) {
+            showMessageDialog(null,
+
+                    "Try again, NumberFormatException - enter only numbers, symbols and letters are " +
+                            "prohibited!",
+                    "Error",
+                    WARNING_MESSAGE
+            );
+
+            input2 = showInputDialog(null,
+                    "Please enter second number",
+                    "Calculator",
+                    QUESTION_MESSAGE
+            );
+
+            secondNumber = parseInt(input2);
+
+        }
 
         int res = calculating(operation, firstNumber, secondNumber);
 
