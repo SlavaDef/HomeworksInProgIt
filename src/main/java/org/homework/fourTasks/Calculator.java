@@ -20,44 +20,45 @@ import static javax.swing.JOptionPane.WARNING_MESSAGE;
 ////помилку та виводити відповідне повідомлення.
 ////Використайте конструкцію try-catch для обробки помилок у програмі.
 public class Calculator {
-   static int  firstNumber;
-   static int  secondNumber;
-   static char operation;
+    static int firstNumber;
+    static int secondNumber;
+    static char operation;
 
-   static int result;
 
-  public int getFirstNumber(){
-      String input = showInputDialog(null,
-              "Please enter first number",
-              "Calculator",
-              QUESTION_MESSAGE
-      );
+    static int result;
 
-      try{
-          firstNumber = parseInt(input);
-      }catch (Exception e){
-          showMessageDialog(null,
+    public int getFirstNumber() {
+        String input = showInputDialog(null,
+                "Please enter first number",
+                "Calculator",
+                QUESTION_MESSAGE
+        );
 
-                  "Try again, NumberFormatException - enter only numbers, symbols and letters are " +
-                          "prohibited!",
-                  "Error",
-                  WARNING_MESSAGE
-          );
-          getFirstNumber();
-      }
-       return firstNumber;
-   }
+        try {
+            firstNumber = parseInt(input);
+        } catch (Exception e) {
+            showMessageDialog(null,
 
-    public int getSecondNumber(){
+                    "Try again, NumberFormatException - enter only numbers, symbols and letters are " +
+                            "prohibited!",
+                    "Error",
+                    WARNING_MESSAGE
+            );
+            getFirstNumber();
+        }
+        return firstNumber;
+    }
+
+    public int getSecondNumber() {
         String input = showInputDialog(null,
                 "Please enter second number",
                 "Calculator",
                 QUESTION_MESSAGE
         );
 
-        try{
+        try {
             secondNumber = parseInt(input);
-            if(secondNumber==0){
+            if (secondNumber == 0) {
                 showMessageDialog(null,
 
                         "Try again, NullPointerException - enter only numbers, symbols and letters are " +
@@ -68,7 +69,7 @@ public class Calculator {
 
                 getSecondNumber();
             }
-        }catch (NumberFormatException e ){
+        } catch (NumberFormatException e) {
             showMessageDialog(null,
 
                     "Try again, NumberFormatException - enter only numbers, symbols and letters are " +
@@ -81,30 +82,47 @@ public class Calculator {
         return secondNumber;
     }
 
-    public char getOperation(){
-        showMessageDialog(null,"",
-                "Hello, this is a calculator, lets start!",
-                INFORMATION_MESSAGE
-        );
+    public char getOperation() {
+
         String input = showInputDialog(null,
                 "Please enter operation",
                 "Calculator",
                 QUESTION_MESSAGE
         );
-       if (input.length()>1 | input.isEmpty()){
-           getOperation();
-       }
+        if (input.length() > 1 | input.isEmpty()) {
+            showMessageDialog(null,
 
-       operation=input.charAt(0);
+                    "Try again, NumberFormatException - enter only '*' or '/' or '+' or '-' " +
+                            "prohibited!",
+                    "Error",
+                    WARNING_MESSAGE
+            );
+            getOperation();
+        }
+        String[] temp = new String[]{"/", "*", "+", "-"};
 
-        char[] temp = new char[]{'/', '*', '+', '-'};
 
+        if ((input.equalsIgnoreCase(temp[0])) | (input.equalsIgnoreCase(temp[1])) |
+                (input.equalsIgnoreCase(temp[2])) | (input.equalsIgnoreCase(temp[3]))) {
 
-      return operation;
+            operation = input.charAt(0);
+        } else {
+            showMessageDialog(null,
+
+                    "Try again, NumberFormatException - enter only '*' or '/' or '+' or '-' " +
+                            "prohibited!",
+                    "Error",
+                    WARNING_MESSAGE
+            );
+
+            getOperation();
+        }
+
+        return operation;
     }
 
-    public void runCulculator(char operator, int first , int second){
-        switch (operator){
+    public void runCulculator(char operator, int first, int second) {
+        switch (operator) {
             case ('/'):
                 result = first / second;
                 break;
@@ -125,22 +143,25 @@ public class Calculator {
                 INFORMATION_MESSAGE
         );
 
-
     }
-
 
     public static void main(String[] args) {
 
-      Calculator calculator = new Calculator();
+        Calculator calculator = new Calculator();
+
+        showMessageDialog(null, "",
+                "Hello, this is a calculator, lets start!",
+                INFORMATION_MESSAGE
+        );
+
         char op = calculator.getOperation();
-       // System.out.println(op);
-      int first = calculator.getFirstNumber();
-      int second = calculator.getSecondNumber();
-      calculator.runCulculator(op,first,second);
+        int first = calculator.getFirstNumber();
+        int second = calculator.getSecondNumber();
+        calculator.runCulculator(op, first, second);
 
-
-        }
 
     }
+
+}
 
 
