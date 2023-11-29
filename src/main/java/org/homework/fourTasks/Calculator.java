@@ -70,7 +70,7 @@ public class Calculator {
             );
 
             operation = String.valueOf(input);
-            //  System.out.println(operation);
+
 
 
             input1 = showInputDialog(null,
@@ -80,6 +80,7 @@ public class Calculator {
             );
         try {
             firstNumber = parseInt(input1);
+
         } catch (Exception e) {
             showMessageDialog(null,
 
@@ -140,7 +141,7 @@ public class Calculator {
 
         showMessageDialog(null,
                 res,
-                "Result",
+                "Your result",
                 INFORMATION_MESSAGE
         );
 
