@@ -31,14 +31,15 @@ public class Calculator {
     private String input2;
 
     private String input1;
-
+    char[] temp = new char[]{'/', '*', '+', '-'};
 
     public int calculating(String operation, int firs, int second) {
         int result = 0;
-
-       /* if (second == 0) {
-            throw new ArithmeticException("You can not work with zero");
-
+      //  char resChar;
+      /*  for (int i = 0; i < temp.length; i++) {
+            if(temp[i]==operation){
+                resChar=operation;
+            }
         } */
 
         switch (operation) {
@@ -61,7 +62,7 @@ public class Calculator {
     void run() {
 
 
-        try {
+
             input = showInputDialog(null,
                     "Please enter / or * or - or +",
                     "Calculator",
@@ -71,23 +72,15 @@ public class Calculator {
             operation = String.valueOf(input);
             //  System.out.println(operation);
 
-        } catch (IllegalArgumentException e) {
-            showMessageDialog(null,
 
-                    "Try again, please enter / or * or - or + ",
-                    "Error",
-                    WARNING_MESSAGE
-            );
-        }
-        try {
             input1 = showInputDialog(null,
                     "Please enter first number",
                     "Calculator",
                     QUESTION_MESSAGE
             );
-
+        try {
             firstNumber = parseInt(input1);
-        } catch (NumberFormatException e) {
+        } catch (Exception e) {
             showMessageDialog(null,
 
                     "Try again, NumberFormatException - enter only numbers, symbols and letters are " +
@@ -101,19 +94,21 @@ public class Calculator {
                     "Calculator",
                     QUESTION_MESSAGE
             );
+
             firstNumber = parseInt(input1);
 
         }
 
-        try {
+
             input2 = showInputDialog(null,
                     "Please enter second number",
                     "Calculator",
                     QUESTION_MESSAGE
             );
-
+        try {
             secondNumber = parseInt(input2);
-            while (secondNumber==0){
+            while (secondNumber == 0 ) {
+
                 input2 = showInputDialog(null,
                         "Please enter second number",
                         "Calculator",
