@@ -29,8 +29,7 @@ public class Calculator {
         String input = showInputDialog(null,
                 "Please enter first number",
                 "Calculator",
-                QUESTION_MESSAGE
-        );
+                QUESTION_MESSAGE );
         try {
             firstNumber = parseInt(input);
         } catch (Exception e) {
@@ -39,8 +38,7 @@ public class Calculator {
                     "Try again, NumberFormatException - enter only numbers, symbols and letters are " +
                             "prohibited!",
                     "Error",
-                    WARNING_MESSAGE
-            );
+                    WARNING_MESSAGE );
             getFirstNumber();
         }
         return firstNumber;
@@ -50,8 +48,7 @@ public class Calculator {
         String input = showInputDialog(null,
                 "Please enter second number",
                 "Calculator",
-                QUESTION_MESSAGE
-        );
+                QUESTION_MESSAGE );
         try {
             secondNumber = parseInt(input);
             if (secondNumber == 0) {
@@ -59,8 +56,7 @@ public class Calculator {
                         "Try again, NullPointerException - enter only numbers, symbols and letters are " +
                                 "prohibited!",
                         "Error",
-                        WARNING_MESSAGE
-                );
+                        WARNING_MESSAGE );
                 getSecondNumber();
             }
         } catch (NumberFormatException e) {
@@ -68,8 +64,7 @@ public class Calculator {
                     "Try again, NumberFormatException - enter only numbers, symbols and letters are " +
                             "prohibited!",
                     "Error",
-                    WARNING_MESSAGE
-            );
+                    WARNING_MESSAGE );
             getSecondNumber();
         }
         return secondNumber;
@@ -104,7 +99,7 @@ public class Calculator {
         return operation;
     }
 
-    public void runCulculator(char operator, int first, int second) {
+    public void runCalculator(char operator, int first, int second) {
         switch (operator) {
             case ('/'):
                 result = first / second;
@@ -131,12 +126,11 @@ public class Calculator {
 
         showMessageDialog(null, "",
                 "Hello, this is a calculator, lets start!",
-                INFORMATION_MESSAGE
-        );
+                INFORMATION_MESSAGE );
         char op = calculator.getOperation();
         int first = calculator.getFirstNumber();
         int second = calculator.getSecondNumber();
-        calculator.runCulculator(op, first, second);
+        calculator.runCalculator(op, first, second);
     }
 }
 
