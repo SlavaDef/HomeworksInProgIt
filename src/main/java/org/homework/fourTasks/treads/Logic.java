@@ -20,9 +20,8 @@ public class Logic {
                 INFORMATION_MESSAGE);
 
         double resalt = 0;
-        Scanner scanner = new Scanner(System.in);
 
-        try {
+        try ( Scanner scanner = new Scanner(System.in)){
             double b = scanner.nextDouble();
             double a = scanner.nextDouble();
 

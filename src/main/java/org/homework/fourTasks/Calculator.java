@@ -4,7 +4,6 @@ import static java.lang.Integer.parseInt;
 import static javax.swing.JOptionPane.*;
 import static javax.swing.JOptionPane.WARNING_MESSAGE;
 
-
 // Напишіть програму-калькулятор, яка дозволяє користувачу вводити
 //математичні операції (додавання, віднімання, множення, ділення) та виконувати
 //їх. Програма повинна також вміти обробляти помилки, такі як ділення на нуль або
