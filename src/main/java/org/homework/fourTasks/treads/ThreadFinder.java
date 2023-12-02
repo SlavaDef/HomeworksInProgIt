@@ -32,18 +32,16 @@ public class ThreadFinder {
         int[][] numbers = {{44, 32, 12, 88, 99}, {123, 84, 34, 99, 105}, {66, 70, 234, 270, 22},
                 {72, 996, 12, 15, 90}, {2, 32, 779, 27, 15}};
 
-        Thread thread = new Thread(new Runnable() {
-            @Override
-            public void run() {
+        Thread thread = new Thread(() -> {
+
                 List<Integer> list = new ThreadFinder().finder(numbers);
-                System.out.println(list);
-            }
+                System.out.println("Thread first = " + list);
         });
 
         thread.start();
 
         ThreadFinder threadFinder = new ThreadFinder();
-        System.out.println(threadFinder.finder(numbers));
+        System.out.println("Main thread = " + threadFinder.finder(numbers));
     }
 
 }
