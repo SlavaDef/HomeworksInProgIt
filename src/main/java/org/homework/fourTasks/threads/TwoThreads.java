@@ -1,4 +1,4 @@
-package org.homework.fourTasks.treads;
+package org.homework.fourTasks.threads;
 
 // Напишіть програму, в якій створюються два потоки. Обидва потоки працюють
 //з числовим масивом, створеним у головному потоці. Перший потік розраховує

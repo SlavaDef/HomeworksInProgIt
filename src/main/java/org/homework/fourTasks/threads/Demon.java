@@ -1,4 +1,4 @@
-package org.homework.fourTasks.treads;
+package org.homework.fourTasks.threads;
 
 import static javax.swing.JOptionPane.*;
 
@@ -17,13 +17,13 @@ class Demon {
             while (true) {
         // Відображення повідомлення:
                 System.out.println(Thread.currentThread().getName() + ": " + s);
-                try {
         // Затримка у виконанні потоку:
+                try {
                     Thread.sleep(1000);
-                } // Обробка винятку:
-                catch (InterruptedException e) {
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
                 }
-         // Доданок до суми:
+                // Доданок до суми:
                 s += k;
          // Збільшення значення індексної змінної:
                 k++;

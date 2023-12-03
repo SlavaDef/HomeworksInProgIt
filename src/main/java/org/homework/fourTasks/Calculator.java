@@ -125,7 +125,6 @@ public class Calculator {
                 "Hello, this is a calculator, lets start!",
                 INFORMATION_MESSAGE );
         do {
-
             char op = getOperation();
             int first = getFirstNumber();
             int second = getSecondNumber();
@@ -145,9 +144,7 @@ public class Calculator {
     }
 
     public static void main(String[] args) {
-
-        Calculator calculator = new Calculator();
-        calculator.ask();
+        new Calculator().ask();
     }
 }
 

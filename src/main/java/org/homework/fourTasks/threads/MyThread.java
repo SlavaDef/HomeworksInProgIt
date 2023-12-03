@@ -1,4 +1,4 @@
-package org.homework.fourTasks.treads;
+package org.homework.fourTasks.threads;
 
 // Підклас MyThread створюється успадкуванням суперкласу Thread:
 
@@ -34,7 +34,7 @@ class MyThread extends Thread {
     }
 }
 
-class Demo {
+class Demo2 {
     public static void main(String[] args) throws InterruptedException {
         System.out.println("Починає виконуватися головний потік");
 // Створення об'єктів - запуск потоків:

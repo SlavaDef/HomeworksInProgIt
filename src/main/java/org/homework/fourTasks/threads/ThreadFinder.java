@@ -1,4 +1,4 @@
-package org.homework.fourTasks.treads;
+package org.homework.fourTasks.threads;
 
 import java.util.ArrayList;
 import java.util.List;

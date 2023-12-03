@@ -1,4 +1,4 @@
-package org.homework.fourTasks.treads;
+package org.homework.fourTasks.threads;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
