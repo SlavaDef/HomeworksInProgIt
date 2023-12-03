@@ -119,17 +119,35 @@ public class Calculator {
                 INFORMATION_MESSAGE );
     }
 
-    public static void main(String[] args) {
-
-        Calculator calculator = new Calculator();
-
+    public void ask(){
+        int res;
         showMessageDialog(null, "",
                 "Hello, this is a calculator, lets start!",
                 INFORMATION_MESSAGE );
-        char op = calculator.getOperation();
-        int first = calculator.getFirstNumber();
-        int second = calculator.getSecondNumber();
-        calculator.runCalculator(op, first, second);
+        do {
+
+            char op = getOperation();
+            int first = getFirstNumber();
+            int second = getSecondNumber();
+            runCalculator(op,first,second);
+            // Відображення вікна та запам'ятовування
+            //вибору користувача:
+            res = showConfirmDialog(null,
+                    // Текст у вікні:
+                    "Закінчити обчислення?",
+                    // Назва вікна:
+                    "Calculator",
+                    // Кнопки у вікні:
+                    YES_NO_OPTION
+            );
+
+        } while (res == NO_OPTION);
+    }
+
+    public static void main(String[] args) {
+
+        Calculator calculator = new Calculator();
+        calculator.ask();
     }
 }
 

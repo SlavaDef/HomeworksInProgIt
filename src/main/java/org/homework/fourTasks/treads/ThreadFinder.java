@@ -14,9 +14,9 @@ public class ThreadFinder {
 
         List<Integer> list = new ArrayList<>();
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < numbers.length; i++) {
 
-            for (int j = 0; j < 5; j++) {
+            for (int j = 0; j < numbers.length; j++) {
                 if (max < numbers[i][j]) {
                     max = numbers[i][j];
                 }
