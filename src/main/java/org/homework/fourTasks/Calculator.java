@@ -1,6 +1,5 @@
 package org.homework.fourTasks;
 
-import static java.lang.Integer.parseInt;
 import static javax.swing.JOptionPane.*;
 import static javax.swing.JOptionPane.WARNING_MESSAGE;
 

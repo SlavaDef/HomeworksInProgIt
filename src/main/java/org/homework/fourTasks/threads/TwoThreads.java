@@ -12,7 +12,20 @@ class TwoThreads {
 
         int[] numbers = new int[]{32, 14, 66, 89, 88, 12, 34, 55, 70, 123, 54, 678, 12, 0, 3, 97};
 
-        int first = 0;
+        Thread thread2 = new Thread(new Runnable() {
+            int first = 0;
+
+            public void run() {
+                for (int i = 0; i < numbers.length; i++) {
+                    if (i % 2 != 0) {
+
+                        first  += numbers[i];
+
+                    }
+                }
+                System.out.println("First Thread count = " + first);
+            }
+        });
 
         Thread thread = new Thread(new Runnable() {
             int second = 0;
@@ -22,21 +35,16 @@ class TwoThreads {
                     if (i % 2 == 0) {
 
                         second += numbers[i];
-                        System.out.println("Second Thread count = " + second);
+
                     }
                 }
+                System.out.println("Second Thread count = " + second);
 
             }
         });
+        thread2.start();
         thread.start();
 
-        for (int i = 0; i < numbers.length; i++) {
-            if (i % 2 != 0) {
-
-                first += numbers[i];
-                System.out.println("Main Thread count = " + first);
-            }
-        }
     }
 }
 
