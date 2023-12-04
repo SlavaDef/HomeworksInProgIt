@@ -2,8 +2,8 @@ package org.homework.fourTasks.threads;
 
 class MyNumber { // Клас із цілим полем
     int number;
-} // Клас створення потоків:
-
+}
+// Клас створення потоків:
 class MyThread2 extends Thread {
     private MyNumber obj; // Посилання на об'єкт із цілим полем
     private int time; // Довжина паузи у виконанні потоку
@@ -51,9 +51,9 @@ class MyThread2 extends Thread {
     }
 }
 
-            // Головний клас:
+
 class Demo {
-    // Головний метод:
+
     public static void main(String[] args) {
         // Цілочислові змінні:
         int n = 100, count = 5, time = 1000, dt = 200;
