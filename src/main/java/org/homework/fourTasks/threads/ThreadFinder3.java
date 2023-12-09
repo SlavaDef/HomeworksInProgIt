@@ -1,53 +1,47 @@
 package org.homework.fourTasks.threads;
 
+
 // Напишіть програму, в якій створюється двовимірний цілочисловий масив.
 //Програма знаходить в кожному рядку масиву елемент з найбільшим значенням.
 //Пошук елементу з найбільшим значенням в кожному рядку виконується окремим
 //потоком.
-public class ThreadFinder3 extends Thread{
+public class ThreadFinder3 extends Thread {
 
-    private int temp;
+    private  final int temp, rows, columns;
 
-    private int rows;
-    private int columns;
-    int[][] arr = new int[rows][columns];
-
-
-    private final int[][] numbers = {{44, 32,  88, -2}, {123, 84, 99, -7}, {-66,  -234, -270, -1},
-            {-72,  -12, -15, -6}, {44, 32, 12,  -2}, {44, 32,  88, -2}, { 32, 12, 88, -2}, {123, 84,  99, -7}};
-
-
-    public ThreadFinder3(String name, int temp) {
+    public ThreadFinder3(String name, int temp, int rows, int columns) {
         super(name);
         this.temp = temp;
+        this.rows = rows;
+        this.columns = columns;
         start();
 
     }
 
-    public int getNumbers() {
-        return numbers.length;
-    }
+    public int[][] initArray(int rows, int columns) {
+        int[][] arr = new int[rows][columns];
+        int diapason = -100 + Math.abs(-200) + 1;
+        for (int i = 0; i < rows; i++) {
 
-    public ThreadFinder3() {
-    }
-
-    public int[][] createArray(int rows,int columns){
-
-        return new int[rows][columns];
+            for (int j = 0; j < arr[0].length; j++) {
+                arr[i][j] = (int) (Math.random() * diapason) - 100;
+            }
+        }
+        return arr;
     }
 
     @Override
     public void run() {
         int max = Integer.MIN_VALUE;
 
+        int[][] arr = initArray(rows, columns);
+        for (int i = temp; i < temp + 1; i++) { // завжди один прохід по стовпу[c][] =9
 
-        for (int i = temp; i < temp + 1; i++) { // завжди один прохід по стовпу[c][]
+            for (int j = 0; j < arr[0].length; j++) { // проход по значенням [][з] =4
 
-            for (int j = 0; j < numbers[0].length; j++) { // проход по значенням [][з]
-
-                max = Math.max(max, numbers[i][j]);
+                max = Math.max(max, arr[i][j]);
             }
-            System.out.println("Thread " + i + getName() + " max = " + max);
+            System.out.println("Thread " + i + " max = " + max);
 
 
             max = Integer.MIN_VALUE;
@@ -60,14 +54,12 @@ class Test3 {
 
     public static void main(String[] args) {
 
-        int a = new ThreadFinder3().getNumbers();
-        System.out.println(a);
+        int rows = 4;
+        int columns = 9;
 
-        for (int i = 0; i < a; i++) {
-            new ThreadFinder2("", i);
+        for (int i = 0; i < rows; i++) {
+            new ThreadFinder3("", i, rows, columns);
         }
 
-
     }
-
 }
