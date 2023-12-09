@@ -20,11 +20,14 @@ public class ThreadFinder3 extends Thread {
 
     public int[][] initArray(int rows, int columns) {
         int[][] arr = new int[rows][columns];
-        int diapason = -100 + Math.abs(-200) + 1;
         for (int i = 0; i < rows; i++) {
 
             for (int j = 0; j < arr[0].length; j++) {
-                arr[i][j] = (int) (Math.random() * diapason) - 100;
+                if (i%2==0){
+                    arr[i][j] = (int) (Math.random() * ((-100 - 200) + 1)) -200;
+                }else {
+                    arr[i][j] = (int) (Math.random() * ((1000 - 200) + 1)) + 200;
+                }
             }
         }
         return arr;
@@ -54,7 +57,7 @@ class Test3 {
 
     public static void main(String[] args) {
 
-        int rows = 4;
+        int rows = 9;
         int columns = 9;
 
         for (int i = 0; i < rows; i++) {
