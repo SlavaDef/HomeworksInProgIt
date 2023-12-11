@@ -52,7 +52,7 @@ class Task {
     }
 }
 
-class TaskServise {
+class TaskService {
 
     private final Map<Long, Task> tasksMap;
 
@@ -73,7 +73,7 @@ class TaskServise {
                 .format(LocalDateTime.now(ZoneId.of(utcCreator()))) + " " + utcCreator();
     }
 
-    public TaskServise() {
+    public TaskService() {
         this.tasksMap = new HashMap<>();
         tasksMap.put(1L, new Task(dataCreator(), "HomeWork", "Cleanning Comp", "not done"));
         tasksMap.put(2L, new Task(dataCreator(), "Run", "run 15 miles", "not done"));
@@ -111,19 +111,17 @@ class TestTasks {
 
     public static void main(String[] args) {
 
-        TaskServise taskServise = new TaskServise();
+        TaskService taskService = new TaskService();
 
-        taskServise.findAll();
+        taskService.findAll();
         System.out.println("------------------------------------");
-        taskServise.addTask(new Task("Brecfast", "to buy somethin for  breakfast", "not done"));
-        taskServise.findAll();
+        taskService.addTask(new Task("Brecfast", "to buy somethin for  breakfast", "not done"));
+        taskService.findAll();
         System.out.println("------------------------------------");
-        taskServise.deleteTask(5L);
-        taskServise.findAll();
+        taskService.deleteTask(5L);
+        taskService.findAll();
         System.out.println("------------------------------------");
-        taskServise.isMadeTask(1L);
-        taskServise.findAll();
-
-
+        taskService.isMadeTask(1L);
+        taskService.findAll();
     }
 }
