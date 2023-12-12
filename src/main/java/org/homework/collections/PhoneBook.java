@@ -1,4 +1,4 @@
-package collections;
+package org.homework.collections;
 
 import java.util.HashMap;
 import java.util.Map;

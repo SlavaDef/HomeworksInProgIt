@@ -1,4 +1,4 @@
-package collections;
+package org.homework.collections;
 
 import java.time.LocalDateTime;
 import java.time.ZoneId;

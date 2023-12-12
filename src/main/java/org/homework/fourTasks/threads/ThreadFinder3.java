@@ -21,7 +21,6 @@ public class ThreadFinder3 extends Thread {
         this.temp = temp;
         this.arr = arr;
         start();
-
     }
 
     @Override
@@ -49,12 +48,11 @@ class Test3 {
 
         int[][] arr = initAndCreateArray(rows, 12);
 
+        System.out.println(Arrays.deepToString(arr));
 
         for (int i = 0; i < rows; i++) {
             new ThreadFinder3("", i, arr);
         }
-        System.out.println(Arrays.deepToString(arr));
-
     }
 }
 
@@ -66,9 +64,9 @@ class Array {
 
             for (int j = 0; j < arr[0].length; j++) {
                 if (i % 2 == 0) {
-                    arr[i][j] = (int) (Math.random() * ((-100 - 200) + 1)) - 200;
+                    arr[i][j] = (int) (Math.random() * (-100));
                 } else {
-                    arr[i][j] = (int) (Math.random() * ((1000 - 200) + 1)) + 200;
+                    arr[i][j] = (int) (Math.random() * 100);
                 }
             }
         }
