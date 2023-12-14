@@ -4,6 +4,11 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
+// Створіть колекцію з випадкових чисел. Відсортуйте її в порядку зростання. При
+//порівнянні чисел використати компаратор, який порівнює числа на основі суми
+//цифр, які входять до складу числа. Наприклад, число 89 буде "більшим" за число
+//123, оскільки 8+9=17, а 1+2+3=6 і 17>6.
+
 public class ComparatorCase3 implements Comparator {
     @Override
     public int compare(Object o1, Object o2) {
