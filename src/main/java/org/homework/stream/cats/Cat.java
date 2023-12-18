@@ -13,7 +13,7 @@ public class Cat {
     }
 
     public String getName() {
-        System.out.println(name);
+      //  System.out.println(name);
         return name;
     }
 
@@ -30,7 +30,7 @@ public class Cat {
     }
 
     public int getWeight() {
-        System.out.println(weight);
+      //  System.out.println(weight);
         return weight;
     }
 
