@@ -9,6 +9,8 @@ public class Examples {
 
         List<Integer> list = List.of(-4, 5, 12, -22, 0, 6);
 
+        List<Integer> list2 = List.of(-4, 5, 12, 12, -22, 0, 6, 0, -4, 5);
+
         //  List<Integer> newList =
         list.stream()
                 .filter(a -> (a > 0) & a != 12) // відфільтрує єлементи згідно лямдо виразу, дві умови
@@ -18,6 +20,8 @@ public class Examples {
 
         //System.out.println(list); // вихідний лист
         // System.out.println(newList); // перероблений лист
+
+        list2.stream().distinct().forEach(System.out::println); // distinct() delete dyblicates
 
 
     }
