@@ -1,6 +1,4 @@
-package org.homework.stream;
-
-import org.homework.stream.Phone.Phone;
+package org.homework.stream.Phone;
 
 import java.util.ArrayList;
 import java.util.Comparator;

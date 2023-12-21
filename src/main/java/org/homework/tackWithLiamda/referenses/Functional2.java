@@ -1,4 +1,4 @@
-package org.homework.thirtTasks.referenses;
+package org.homework.tackWithLiamda.referenses;
 
 // Напишіть програму, в якій є клас з закритим текстовим полем і два відкритих
 //методи: один дозволяє присвоїти значення полю, інший результатом повертає

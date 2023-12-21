@@ -1,4 +1,4 @@
-package org.homework.stream;
+package org.homework.stream.Homeworks;
 
 import java.io.IOException;
 import java.nio.file.Files;

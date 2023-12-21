@@ -1,6 +1,8 @@
-package org.homework.stream.cats;
+package org.homework.stream.Homeworks;
 
 // Используя Stream API и List<Cat> верните самое длинное имя кота в этом списке.
+
+import org.homework.stream.cats.Cat;
 
 import java.util.Comparator;
 import java.util.List;

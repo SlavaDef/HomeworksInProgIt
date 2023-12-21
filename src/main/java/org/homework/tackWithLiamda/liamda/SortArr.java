@@ -1,4 +1,4 @@
-package org.homework.thirtTasks.liamda;
+package org.homework.tackWithLiamda.liamda;
 
 import java.util.Arrays;
 

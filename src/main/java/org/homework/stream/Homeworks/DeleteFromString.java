@@ -1,4 +1,4 @@
-package org.homework.stream;
+package org.homework.stream.Homeworks;
 
 // Удалите из строки текста все слова длиннее 5 символов
 

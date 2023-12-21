@@ -1,4 +1,4 @@
-package org.homework.stream;
+package org.homework.stream.Homeworks;
 
 import java.util.Arrays;
 import java.util.List;
