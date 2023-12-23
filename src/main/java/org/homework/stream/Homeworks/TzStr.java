@@ -21,11 +21,12 @@ public class TzStr {
         System.out.println(Arrays.toString(str));
 
         Stream<String> res = Arrays.stream(str)
-                .filter(a->a.contains("groupId"))
-                .map(a->a.replaceAll("<groupId>",""))
-                .map(a->a.replaceAll("</groupId>",""));
+                .filter(a -> a.contains("groupId"))
+                .map(a -> a.replaceAll("<groupId>", ""))
+                .map(a -> a.replaceAll("</groupId>", ""));
 
         List<String> result = res.collect(Collectors.toList());
         System.out.println(result);
     }
+
 }
