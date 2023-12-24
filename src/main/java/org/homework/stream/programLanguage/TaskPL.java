@@ -14,7 +14,7 @@ public class TaskPL {
                                                                List<ProgrammingLanguage> languages) {
 
         return languages.stream()
-                .filter(a -> a.getComplexity().equals(level)).findFirst();
+                .filter(a -> a.getComplexity().equals(level)).findFirst(); // max(TaskPL::compareHard);
     }
 
     public static void main(String[] args) {
@@ -31,6 +31,16 @@ public class TaskPL {
 
         System.out.println(chooseLanguage(DifficultyLevel.HARD, languages));
 
+    }
+
+    public static int compareHard(ProgrammingLanguage a, ProgrammingLanguage b) {
+        if (a.getComplexity().ordinal() > b.getComplexity().ordinal()) {
+            return 1;
+        }
+        if (a.getComplexity().ordinal() < b.getComplexity().ordinal()) {
+            return -1;
+        }
+        return Integer.compare(a.getName().length(), b.getName().length());
     }
 }
 
