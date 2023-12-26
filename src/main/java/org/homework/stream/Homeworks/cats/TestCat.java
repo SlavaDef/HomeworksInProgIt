@@ -1,6 +1,4 @@
-package org.homework.stream.cats;
-
-import org.homework.stream.cats.Cat;
+package org.homework.stream.Homeworks.cats;
 
 import java.util.List;
 import java.util.stream.Collectors;

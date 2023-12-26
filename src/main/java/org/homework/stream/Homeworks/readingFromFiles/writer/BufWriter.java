@@ -1,4 +1,4 @@
-package org.homework.writer;
+package org.homework.stream.Homeworks.readingFromFiles.writer;
 
 import java.io.*;
 import java.util.stream.Collectors;

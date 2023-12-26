@@ -1,9 +1,7 @@
-package org.homework.stream.Homeworks;
+package org.homework.stream.Homeworks.cats;
 
 // Удалите из List<Cat> всех кошек вес которых меньше 3 кг, отсортируйте их по именам
 //   (в лексикографическом порядке) и соберите результат в новый список Cat.
-
-import org.homework.stream.cats.Cat;
 
 import java.util.Comparator;
 import java.util.List;

@@ -1,4 +1,4 @@
-package org.homework.stream.cats;
+package org.homework.stream.Homeworks.cats;
 
 import java.io.IOException;
 import java.nio.file.DirectoryStream;
