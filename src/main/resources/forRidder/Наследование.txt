@@ -1,0 +1,92 @@
+public class Lesson_25 {
+
+	public static void main(String[] args) {
+		
+		Animall animal = new Animall();
+		
+		animal.eat();
+		animal.sleep();
+		
+		Dog dog = new Dog();
+		
+		dog.eat();
+		dog.sleep();
+
+	}
+
+}
+
+public class Animall {
+	
+	public void eat() {
+	System.out.println("I am eating, now. Dont worry me.");
+		
+	}
+	
+	public void sleep() {
+		System.out.println("I am sleeping, now. Dont worry me.");
+		
+	}
+}
+
+public class Dog extends Animall { // extends - расширять (наследоваться от класса)
+	                              // мы дали понять джаве что собака являеться животным и соотвецтвенно наследует все методы от животных
+
+}
+
+=============================================================================================================================
+
+public class Lesson_25 {
+
+	public static void main(String[] args) {
+		
+	
+		Dog dog = new Dog();
+		
+		dog.eat();
+		dog.sleep();
+		dog.bark();
+		dog.showName();
+
+	}
+
+}
+
+
+public class Animall {
+	
+	
+	String name = "Some animall ";  // создали переменную в родительском классе
+	
+	
+	public void eat() {
+	System.out.println("I am eating, now. Dont worry me.");
+		
+	}
+	
+	public void sleep() {
+		System.out.println("I am sleeping, now. Dont worry me.");
+		
+	}
+}
+
+
+public class Dog extends Animall { // extends - расширять (наследоваться от класса)
+	                              // мы дали понять джаве что собака являеться животным и соотвецтвенно наследует все методы от животных
+
+	
+	public void bark() {
+		System.out.println("I am barking - GAB-GAB");
+	}
+	
+	
+	public void eat() {   // тут мы переопределили метод из класа Animall, если сигнатура одинакова в методах то джава это понимает
+		System.out.println("I am Dog ,eating, wery testy");
+			
+		}
+	
+	public void showName() {
+		System.out.println(name+ "is my dog");   // переменная name видна благодаря наследованию от род класса
+	}                                           // если переменная private то мы ее не увидим
+	
+}

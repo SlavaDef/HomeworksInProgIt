@@ -1,0 +1,122 @@
+import java.util.ArrayList;
+
+public class TestArray {
+
+	public static void main(String[] args) {
+		
+		ArrayList<Cat> cats = new ArrayList<Cat>(); // создали ArrayList
+         
+		 Cat pyshok = new Cat("Pyshok"); // создали три обьекта
+         Cat bob = new Cat("Bob");
+         Cat tom = new Cat("Tom");
+         Cat bigTom = new Cat("Big Tom");
+         Cat bigBob = new Cat("Big Bob");
+         
+         cats.add(pyshok);
+         cats.add(bob);  // добавили в ArrayList три обьекта Cat
+         cats.add(tom);
+         
+         
+         int thomasIndex = cats.indexOf(tom); // нахождение индекса обьекта
+         Cat secondCat = cats.get(1); // вернет по индексу переопределенный метод toString
+         
+         cats.remove(tom); // кикнули кота
+         
+         System.out.println(thomasIndex);
+         System.out.println(secondCat);
+         System.out.println(cats.contains(tom)); // содержит ли ArrayList определенного кота 
+         System.out.println(cats.contains(bob));
+         
+      //  ArrayList позволяет вставлять данные не только в конец массива, но и в любую ячейку по индексу.
+
+         cats.add(tom);
+         System.out.println(cats.toString()); // опять три кота
+         
+         cats.set(0, bigTom );// set() затирает старое значение, хранящееся в ячейке
+         System.out.println(cats.toString());
+         
+         cats.add(0,bigBob );
+         System.out.println(cats.toString());// add() сработал иначе. Он сдвинул все элементы вправо и после этого записал новое значение в ячейку 0.
+         
+         // cats.clear(); Чтобы полностью очистить список, используется метод clear()
+         
+         
+	}
+
+}
+
+
+public class Cat {
+
+private String name;
+
+
+public	Cat(String name){
+		this.name = name;
+	}
+	public String toString() {
+		return "Name of the cat is " + name;
+	}
+	
+}
+
+=========================================================================================================================
+
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class TestArray {
+
+	public static void main(String[] args) {
+		
+		
+         
+		 Cat pyshok = new Cat("Pyshok"); 
+         Cat bob = new Cat("Bob");
+         Cat tom = new Cat("Tom");  // создали 5 обьектов
+         Cat bigTom = new Cat("Big Tom");
+         Cat bigBob = new Cat("Big Bob");
+         
+         Cat[] catsArray = {pyshok, bob, tom, bigTom, bigBob}; // создали массив котов
+         
+         ArrayList<Cat> catsList = new ArrayList<>(Arrays.asList(catsArray)); // Arrays.asList(). С его помощью мы получаем содержимое массива в виде списка и передаем его в конструктор нашего ArrayList:
+         
+         System.out.println(catsList); // переопределенный toString() помог вывести всех котов
+	}
+
+}
+
+============================================================================================================================
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class TestArray {
+
+	public static void main(String[] args) {
+		
+		
+		ArrayList<Cat> cats = new ArrayList<>();
+		
+		 Cat pyshok = new Cat("Pyshok"); 
+         Cat bob = new Cat("Bob");
+         Cat tom = new Cat("Tom");  // создали 5 обьектов
+         Cat bigTom = new Cat("Big Tom");
+         Cat bigBob = new Cat("Big Bob");
+         
+         cats.add(bigBob);
+         cats.add(pyshok);
+         cats.add(bigTom);
+         cats.add(bob);
+         cats.add(tom);
+         
+ // Можно сделать и наоборот — получить массив из объекта ArrayList. Для этого используется метод toArray()
+         
+         Cat[] catsArray = cats.toArray(new Cat[0]); // тут передали пустой массив котов
+         
+         System.out.println(Arrays.toString(catsArray));
+         System.out.println(cats.size()); // вернет размер списка котов
+	}
+
+}

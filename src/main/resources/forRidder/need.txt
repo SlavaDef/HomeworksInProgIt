@@ -1,0 +1,26 @@
+Иногда есть простенькие задачи, зайти в некий каталог и перебрать там все файлы, оставив только xml.
+В Java8 добавили метод walk для перебора файлов
+
+
+List<Path> paths =  Files.walk(Paths.get(PATH_TO_FILES))
+.filter(Files::isRegularFile).filter(p->p.toString().endsWith(".xml"))
+.collect(Collectors.toList());
+
+Можно чуть усложнить задачу.
+Например нам наdо получить список xml файлов в папке, которые содержат какую-то строку.
+
+
+public static List<File> listFiles(String path, String fileEndsWith, String fileContains) throws IOException {
+        return Files.walk(Paths.get(path)).filter(Files::isRegularFile).filter(p->p.toString().endsWith(fileEndsWith)).
+                filter(p->{
+                    try {
+                        String content = new String(Files.readAllBytes(p));
+                        if (content.contains(fileContains)) {
+                            return true;
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    return false;
+            }).map(Path::toFile).collect(Collectors.toList());
+    }

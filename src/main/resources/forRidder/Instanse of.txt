@@ -1,0 +1,59 @@
+public abstract class SpaceObject {
+
+}
+
+abstract class Planet extends SpaceObject {
+
+}
+
+class Mars extends Planet{
+
+}
+
+class Moon extends SpaceObject{
+
+}
+
+class PlanetTester{
+
+    String test(SpaceObject object){
+        String resalt = "4";
+
+
+     if( object instanceof  Mars) {
+            resalt =  "planet";
+        }
+        else if (object instanceof  Moon){
+            resalt =  "not planet";
+        }
+
+return resalt;
+    }
+
+
+
+    public static void main(String[] args) {
+        PlanetTester tester = new PlanetTester();
+        System.out.println(tester.test(new Mars())); //Should be "planet"
+        System.out.println(tester.test(new Moon())); //Should be "not planet"
+
+    }
+}
+
+/* Ти знаєш, що планети відрізняються від інших небесних тіл. Є певні критерії, за якими можемо зрозуміти, що Марс і Земля – це планета, а Місяць – ні.
+
+Ти моделюєш космос, в якому може бути безліч небесних тіл. Якісь небесні тіла є планетами, якісь ні.
+
+Тобі треба написати ієрархію класів, якою можна буде уявити небесні тіла. І написати клас, який зможе визначити - чи є передане небесне тіло планетою.
+
+Створи абстрактний клас SpaceObject.
+
+Створи абстрактний клас Planet, який успадковується від SpaceObject.
+
+Створи клас Mars, який успадковується від Planet.
+
+Створи клас Moon, який успадковується від SpaceObject.
+
+Створи клас PlanetTester. У цього класу має бути метод String test(SpaceObject object), 
+який приймає небесне тіло, і повертає "planet", якщо передане тіло є планетою (в ієрархії класів об'єкта є клас Planet). 
+Інакше метод повертає "not planet".  */ 

@@ -1,0 +1,112 @@
+public class Equils {
+
+	public static void main(String[] args) {
+		
+		// a1 -> (1)  указывает на один обьект который хранитьса в гдето памяти
+		// a2 -> (1)  указывает на второй обьект который хранитьса в гдето памяти
+		
+		Animal animal1 = new Animal(1);
+		Animal animal2 = new Animal(1);
+		
+		// ==  - для примитивных роб для ссылочных типов данных не будет
+		// System.out.print(animal1==animal2); -> olvays false
+
+		//Object object = new Object(); // все наследуеться от Object
+		//object.equals(object); - метод для сравнения обьектов на вход подаеться обьект
+		
+		System.out.print(animal1.equals(animal2)); // olvays false, после переопределения теперь сравниваем обьекты структурно
+		
+	}
+
+}
+
+
+public class Animal {
+	
+	int id;
+	
+	
+	Animal(int id){
+		this.id = id;
+	}
+
+	public boolean equals(Object obj) { // переопределяем стандартній метод equals.() из родителя всех родителей Object 
+ 		Animal otherAnimal = (Animal) obj; // даункастинг поскольку мы знаем что в параметры методу equals будут переданый обьект класса Animal 
+		                                   // теперь мы обязаны использовать обьект класса Object в аргументах
+		return this.id == otherAnimal.id;           // в теле метода мы можем писать любую логику но мы обязаны повторить сишнатуру метода public boolean equals(Object obj)
+	}
+	
+}
+
+=========================================================================================================================
+
+
+public class Equils {
+
+	public static void main(String[] args) {
+		                                                                               // String string1 = new String("Hello");                   
+		String string1 = "Hello"; // при первом создании создаеться ссылка string1 которвая ссылаетьс как бы на обьект со строкой "Hello" 
+		String string2 = "Hello"; // при повторном создании джава понимает что строка такаеже и ссылаеться уже ссылка на ссылку string2 -> string1
+		                                                                                        // таким образом экономя память
+		boolean r = string1.equals(string2);
+		System.out.println(r);
+		
+	}
+
+}
+
+=======================================================================================================================
+
+public class Equils {
+
+	public static void main(String[] args) {
+		
+		String a = "Hello";
+		String b = "Hello123".substring(0,5); // метод позволяет указывать диапозон вводимых символов, будут выведено с 0 по 5тый
+		                                                                                        
+		
+		System.out.println(b);
+		System.out.println(a==b); // такое сравнение выдаст falce - два разных обьекта
+	}
+
+}
+
+=============================================================================================================================
+
+public class TestMan {
+
+	public static void main(String[] args) {
+		
+            Man man1 = new Man(64);
+            Man man2 = new Man(64);
+            Man man3 = new Man(50);
+            
+            boolean d = man1.equals(man2);
+            boolean d2 = man2.equals(man3);
+            
+            System.out.println(d);
+            System.out.println(d2);
+	}
+
+}
+
+public class Man {
+	
+	int year;
+	
+	
+	Man(int year) {  // конструкт
+		this.year = year;
+	}
+	
+	
+	public boolean equals(Man man) {  // переопределили метод, в параметры поставляеться обьект
+		return this.year == man.year ; // сравниваем года обьектов
+	}
+	
+
+}
+============================================================================================================================
+
+
+

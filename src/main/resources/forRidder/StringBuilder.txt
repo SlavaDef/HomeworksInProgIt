@@ -1,0 +1,144 @@
+
+public class While {
+
+	public static void main(String[] args) {
+    
+	// в джаве есть два типа обьектов - изменяемый и не изменяемый
+		
+		String x = "Hello";
+	     x.toUpperCase(); // на обьекте класса String вызвали метод для перевод в заглавные буквы
+	     System.out.println(x); // но метод не сработает
+	     x = x.toUpperCase();  // переопределили х
+	     System.out.println(x);  // тут уже вернулась новая строка, старий обьект умирает, работает сборщик мусора
+	}	
+}
+
+=========================================================================================================================
+
+public class While {
+
+	public static void main(String[] args) {
+    
+	// в джаве есть два типа обьектов - изменяемый и не изменяемый
+		
+	String string1 = "Hello ";  // обьект создан и меняться не будет
+	String string2 = "my ";
+	String string3 = "friend";
+	String stringAll = string1+string2+string3;
+	System.out.print(stringAll);
+		// если контетинировать сильно много или цикл, прога начнет тупить поєтому мспользуют StringBilder
+	}	
+}
+
+=================================================================================================================================
+
+
+public class While {
+
+	public static void main(String[] args) {
+    
+	// в джаве есть два типа обьектов - изменяемый и не изменяемый
+	// если контетинировать сильно много или цикл, прога начнет тупить поєтому мспользуют StringBilder
+		
+	StringBuilder sb = new 	StringBuilder("Hello"); // создали обьект класса StringBuilder, в конструктор поставили слово "Hello"
+	System.out.println(sb);
+	System.out.println(sb.toString()); // вызвали метод у класса StringBuilder
+	
+	sb.append(" my");  // контетенация строк без создания лишних обьектов
+	sb.append(" friend");
+	
+	System.out.println(sb.toString());
+	}	
+}
+
+========================================================================================================================
+
+public class While {
+
+	public static void main(String[] args) {
+    
+	// фарматирование строк
+		System.out.printf("This is the string, %s", " Nice "); // метод для фарматирования строк
+	// синтаксис текст, запятая - %s(то место куда будет вставлен текст) и сам вставляемый текст
+		System.out.printf("This is the string, %d", 5); // %d - єто вставляние цифры
+		
+		System.out.printf("%s This is the %d string, %f", " And ",5,4.6); // вставки в трех местах
+		
+	}	
+}
+
+========================================================================================================================
+
+public class While {
+
+	public static void main(String[] args) {
+    
+	// фарматирование строк
+		System.out.printf("String %10d  \n", 10); // %10d - цифры это ширина числа, выравнивание по прав краю
+		System.out.printf("String %10d  \n", 1000000); // \n - перенос на след строку аналогия println  
+		System.out.printf("String %10d  \n", 10000000); //-1%d выравнивание по лев краю
+		System.out.printf("String %10d  \n", 1000000000);
+	
+		System.out.printf("String %.2f  \n", 10.77777);  // %.2f ограничивает число цифр после запятой, в данном примере будет два
+		System.out.printf("String %.2f  \n", 10.777);  // + цифры окрюгляються в большую сторону
+		System.out.printf("String %.2f  \n", 10.77);
+	}	
+}
+
+===========================================================================================================================
+
+//"%, d" - означает вставляем запятые и форматируем число как десятичное целое 
+		String s = String.format("%, d", 1000000000);// format принимает два аргумента, как отфармотировать и что
+		
+		String v = String.format("I must correct some %.2f mistaces.", 476578.04876);// %.2f означает форматируем число как дробное с двумя знаками после запятой
+		
+		String a = String.format("I must correct some %,.2f mistaces.", 476578.09876); // вставляем запятые и форматируем число как дробное с точностью до десятичного знака
+		
+		String b = String.format("%.3f",42.000000);// 3 - в конце три нуля
+		
+		System.out.println(s);
+		System.out.println(v);
+		System.out.println(a);
+		System.out.println(b);
+		
+		int one = 20456654;
+		double two = 100567890.248907;
+		
+		String x = String.format("Level %,d from %,.2f", one,two); // ут два аргумента и два спецификатора
+		System.out.println(x);
+
+============================================================================================================================
+
+Date today = new Date(0);
+		
+		String x = String.format("%tc", today);
+		String y = String.format("%tr", today);
+		
+		System.out.println(x);
+		System.out.println(y);
+
+=============================================================================================================================
+
+Calendar car = Calendar.getInstance(); // Calendar  - клас абстрактный, обьект не создается но статические методы элементарно вызываються
+		
+		car.set(2004,0,7,15,40); // устанавливаем время 07 января 2004г 15:40
+		
+		long day1 = car.getTimeInMillis(); // превращаем в большое кол во милисекунд
+		
+		day1+= 1000*60*60;
+		
+		car.setTimeInMillis(day1);// добавляэм эквивалент часа в милисекундах затем обновляем время
+		
+		System.out.println("New time " + car.get(car.HOUR_OF_DAY));
+		
+		car.add(car.DATE, 35); // добавляем к дате 35 дней благодаря чему оказываемся в феврале
+		
+		System.out.println("Add 35 days " + car.getTime());
+		car.roll(car.DATE, 35); // прокручиваем дату на 35 дней добавляеться 35 дней но месяц не меняеться
+		
+		System.out.println("Scroll 35 days " + car.getTime());
+		car.set(car.DATE, 1);// устанавливаем дату
+		
+		System.out.println("Install date in 1 "+ car.getTime());
+
+

@@ -1,0 +1,97 @@
+import java.util.Scanner;
+
+public class While {
+
+	public static void main(String[] args) {
+		
+	// switch используеться вместо большого количества if
+		
+		
+		
+		
+	Scanner scanner = new Scanner(System.in);
+		System.out.println(" Hello, print your age ");
+		int age = scanner.nextInt();	
+			
+		
+		switch(age) {
+		
+		case 0:
+			System.out.println(" You was born");
+			break;                            // брейк нужен что бы не выполнялись все кейсы
+			
+		case 7:
+			System.out.println(" You is at scool now");
+			break; 
+			
+		case 18:
+			System.out.println(" You a go to the university");
+			break; 
+			
+		default:  // нужен для того если ни один из кейсов не выполнеться
+			System.out.println(" No case to this age");
+			
+			
+			
+		}
+		
+		
+		
+
+		 
+		
+	
+	
+	} 
+
+}
+--------------------------------------------------------------------------------------------------------
+
+
+import java.util.Scanner;
+
+public class While {
+
+	public static void main(String[] args) {
+		
+	// switch используеться вместо большого количества if
+		
+		
+		
+		
+	Scanner scanner = new Scanner(System.in);
+		System.out.println(" Hello, print your age ");
+		String age = scanner.nextLine();	
+			
+		
+		switch(age) {
+		
+		case "nyl":
+			System.out.println(" You was born");
+			break;                            // брейк нужен что бы не выполнялись все кейсы
+			
+		case "seven":
+			System.out.println(" You is at scool now");
+			break; 
+			
+		case "eighteen":
+			System.out.println(" You a go to the university");
+			break; 
+			
+		default:  // нужен для того если ни один из кейсов не выполнеться
+			System.out.println(" No case to this age");
+			
+			
+			
+		}
+		
+		
+		
+
+		 
+		
+	
+	
+	} 
+
+}

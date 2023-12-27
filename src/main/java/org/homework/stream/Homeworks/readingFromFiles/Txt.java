@@ -11,9 +11,14 @@ import java.util.stream.Collectors;
 // На основе адреса каталога выделите список файлов с расширением «txt».
 public class Txt {
 
-    private static final String path = "C:\\Users\\Admin\\Desktop\\Уроки Алишев и Hends for Java\\JAVA SE";
+    // шлях до певної директорії на компі
+    private static final String PATH = "C:\\Users\\Admin\\Desktop\\Уроки Алишев и Hends for Java\\JAVA SE";
 
-    public List<File> getallTxt(String path) throws IOException {
+    // шлях до корнівої папки проєкту
+    private static final String PATH_2 ="./src/main/resources/";
+
+
+    public List<File> getAllTxt(String path) throws IOException {
         return Files.walk(Paths.get(path))
                 .filter(Files::isRegularFile)
                 .filter(a -> a.toString().endsWith("txt"))
@@ -23,6 +28,6 @@ public class Txt {
 
     public static void main(String[] args) throws IOException {
 
-        new Txt().getallTxt(path).stream().forEach(System.out::println);
+        new Txt().getAllTxt(PATH_2).stream().forEach(System.out::println);
     }
 }
