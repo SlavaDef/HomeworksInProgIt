@@ -1,0 +1,39 @@
+
+ String str = "";
+
+ try (BufferedReader intput = new BufferedReader(new FileReader(DIRRECTORY))) {
+            while ((str = intput.readLine()) != null) {
+                URL url = new URL(str);
+                HttpURLConnection huc = (HttpURLConnection) url.openConnection();
+
+               try {
+                  huc.getResponseCode();
+               }catch (UnknownHostException | MalformedURLException e){
+                   continue;
+               }
+
+                if(huc.getResponseCode() == HttpURLConnection.HTTP_OK){
+                    System.out.println(str);
+                }
+            }
+
+        } catch (FileNotFoundException e) {
+            System.out.println("No such file");
+        } catch (IOException e) {
+            System.out.println("---");
+        }
+
+
+         /*  for (int i = 0; i < lines.size(); i++) {
+                    URL url2 = new URL(lines.get(i));
+                    HttpURLConnection huc2 = (HttpURLConnection) url2.openConnection();
+                    try {
+                        int responseCode2 = huc2.getResponseCode();
+                        if(responseCode2==HttpURLConnection.HTTP_OK) {
+                            System.out.println(responseCode2+" "+ lines.get(i));
+                        }
+                    }catch (UnknownHostException e){
+                       continue;
+                    }
+
+                } */

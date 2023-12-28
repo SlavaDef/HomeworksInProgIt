@@ -19,8 +19,8 @@ public class Txt {
 
 
     public List<File> getAllTxt(String path) throws IOException {
-        return Files.walk(Paths.get(path))
-                .filter(Files::isRegularFile)
+        return Files.walk(Paths.get(path)) // з переданої строки отримуємо обьект Path
+                .filter(Files::isRegularFile) // перевірка що це файл а не діректорія
                 .filter(a -> a.toString().endsWith("txt"))
                 .map(Path::toFile)
                 .collect(Collectors.toList());
