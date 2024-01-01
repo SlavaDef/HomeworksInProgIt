@@ -15,7 +15,7 @@ public class ReadingFromFile {
 
     public static void main(String[] args) {
 
-        File adr = new File("C:/Users/Admin/Desktop/Files/fileForWriting");
+        File adr = new File("C:/Users/Admin/Desktop/Files/");
         List<File> direct = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(adr))) {
             String readed;
